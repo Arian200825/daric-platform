@@ -92,7 +92,6 @@ export const config: HotelConfig = {
   ],
 
   seo: {
-    ogImage: "/images/og.jpg",
     keywords: [
       "luxury hotel",
       "5 star resort",
@@ -101,5 +100,11 @@ export const config: HotelConfig = {
       "suites",
       "hotel booking",
     ],
+  },
+
+  // Daric backlinks (built-in lead generation on every clone).
+  daric: {
+    url: "https://arian200825.github.io/daric-agency/",
+    contactUrl: "https://arian200825.github.io/daric-agency/contact/",
   },
 };

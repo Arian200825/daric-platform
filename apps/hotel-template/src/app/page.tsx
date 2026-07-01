@@ -1,9 +1,10 @@
 import { config } from "@/config/hotel.config";
 import { sectionRegistry } from "@/components/sections/registry";
+import { DaricPromo } from "@/components/DaricPromo";
 
 /**
- * Home — assembles the single-page site from config.sections (order + enabled).
- * Reorder or disable sections in hotel.config.ts; this renders them.
+ * Home — assembles the single-page site from config.sections (order + enabled),
+ * then the Daric sales CTA (this demo doubles as a lead-gen asset).
  */
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           const SectionComponent = sectionRegistry[s.id];
           return SectionComponent ? <SectionComponent key={s.id} /> : null;
         })}
+      <DaricPromo />
     </>
   );
 }

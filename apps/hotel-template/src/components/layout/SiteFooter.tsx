@@ -11,7 +11,11 @@ export function SiteFooter() {
   const navItems = sections.filter((s) => s.enabled && s.inNav);
 
   return (
-    <Footer brand={brand.name} note="Crafted by Daric." socials={socials}>
+    <Footer
+      brand={brand.name}
+      socials={socials}
+      builtBy={{ label: "Built by Daric", href: config.daric.url }}
+    >
       {/* Brand */}
       <div className="lg:col-span-2">
         <p className="font-display text-3xl">{brand.name}</p>

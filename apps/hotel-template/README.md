@@ -54,6 +54,24 @@ The booking enquiry and contact forms POST to a configured endpoint, else run in
 demo mode. Point them at your PMS/booking engine or a serverless function per
 client.
 
+## Built-in lead generation (Daric)
+
+This template doubles as a **Daric sales asset**. Every clone:
+- shows a **"Built by Daric"** backlink in the footer, and
+- ends with a **"Get a Custom Hotel Website"** CTA that routes prospects to the
+  Daric agency **contact** page.
+
+Both links are configurable in `hotel.config.ts` → `daric` (`url`, `contactUrl`).
+Point them at your live agency site.
+
+## SEO & favicon
+
+- Title, meta description, Open Graph + Twitter tags come from config (`src/app/layout.tsx`).
+- A social preview image is generated at build (`src/app/opengraph-image.tsx`).
+- A branded favicon is `src/app/icon.svg`.
+- Set `NEXT_PUBLIC_SITE_URL` (origin) at build so OG/canonical URLs are absolute
+  for the deployed URL.
+
 ## Deployment
 Configured for **static export** (`output: "export"`). Build with
 `NEXT_PUBLIC_BASE_PATH=/<repo>` for GitHub Pages project sites, or without it for

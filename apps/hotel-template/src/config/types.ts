@@ -89,6 +89,11 @@ export interface HotelConfig {
   theme: { colors: ThemeColors; radius: number; fonts: { display: string; body: string } };
   sections: SectionConfig[];
   seo: { ogImage?: string; keywords: string[] };
+  /**
+   * Daric backlinks — this template is a Daric sales asset. Every clone credits
+   * Daric and routes prospects to the agency (built-in lead generation).
+   */
+  daric: { url: string; contactUrl: string };
 }
 
 /* --------------------------------- Content ---------------------------------- */

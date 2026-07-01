@@ -13,7 +13,8 @@ const tagline = localize(config.brand.tagline, defaultLocale);
 const description = localize(config.brand.description, defaultLocale);
 
 export const metadata: Metadata = {
-  metadataBase: new URL(config.url),
+  // Deploy URL for absolute OG/canonical links; falls back to the client domain.
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || config.url),
   title: {
     default: `${config.brand.name} — ${tagline}`,
     template: `%s — ${config.brand.name}`,
