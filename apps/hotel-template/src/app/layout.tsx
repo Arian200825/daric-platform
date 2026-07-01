@@ -11,10 +11,11 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 const defaultLocale = config.i18n.defaultLocale;
 const tagline = localize(config.brand.tagline, defaultLocale);
 const description = localize(config.brand.description, defaultLocale);
+// Deploy URL for absolute OG/canonical links; falls back to the client domain.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || config.url;
 
 export const metadata: Metadata = {
-  // Deploy URL for absolute OG/canonical links; falls back to the client domain.
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || config.url),
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${config.brand.name} — ${tagline}`,
     template: `%s — ${config.brand.name}`,
@@ -22,9 +23,10 @@ export const metadata: Metadata = {
   description,
   applicationName: config.brand.name,
   keywords: config.seo.keywords,
+  alternates: { canonical: siteUrl },
   openGraph: {
     type: "website",
-    url: config.url,
+    url: siteUrl,
     siteName: config.brand.name,
     title: `${config.brand.name} — ${tagline}`,
     description,
