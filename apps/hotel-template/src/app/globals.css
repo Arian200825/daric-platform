@@ -5,3 +5,25 @@
 
 /* Scan the shared UI package so its utility classes are generated. */
 @source "../../../../packages/daric-ui/src";
+
+/* Cinematic hero — slow Ken-Burns drift on the landscape image. */
+@keyframes kenburns {
+  from {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1.13);
+  }
+}
+
+@layer utilities {
+  .ken-burns {
+    animation: kenburns 18s ease-out forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ken-burns {
+      animation: none;
+    }
+  }
+}

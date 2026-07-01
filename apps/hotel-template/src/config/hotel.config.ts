@@ -58,19 +58,20 @@ export const config: HotelConfig = {
 
   currency: { code: "USD", symbol: "$" },
 
+  // Bright, ocean-inspired luxury resort (see DESIGN_BRIEF.md).
   theme: {
     colors: {
-      background: "#0a0b0e",
-      surface: "#12141a",
-      foreground: "#f2efe6",
-      muted: "#9ba0ac",
-      primary: "#c6a15b",
-      onPrimary: "#14100a",
-      accent: "#c6a15b",
-      border: "rgba(242, 239, 230, 0.12)",
+      background: "#f8f5ef", // ivory
+      surface: "#f1eadd", // soft sand (alternating sections + cards)
+      foreground: "#1e2a30", // slate ink
+      muted: "#6e7580", // soft gray
+      primary: "#15687e", // ocean blue
+      onPrimary: "#fbfaf6",
+      accent: "#15687e",
+      border: "rgba(30, 42, 48, 0.12)",
     },
-    radius: 0.4,
-    fonts: { display: "cormorant", body: "jost" },
+    radius: 0.5,
+    fonts: { display: "playfair", body: "inter" },
   },
 
   sections: [
