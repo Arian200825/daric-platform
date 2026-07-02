@@ -34,7 +34,7 @@ function BookingForm() {
     if (config.booking.endpoint) {
       try {
         await fetch(config.booking.endpoint, {
-          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data),
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...data, source: "hotel" }),
         });
       } catch { /* fall through; wire real error handling per client */ }
     } else {
