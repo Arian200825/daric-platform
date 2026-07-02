@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Daric shared design-token layer (from @daric/ui). */
+@import "../../../../packages/daric-ui/src/styles/tokens.css";
+
+/* Scan the shared UI package so its utility classes are generated. */
+@source "../../../../packages/daric-ui/src";
