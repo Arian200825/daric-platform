@@ -70,7 +70,7 @@ export const config: HotelConfig = {
       accent: "#15687e",
       border: "rgba(30, 42, 48, 0.12)",
     },
-    radius: 0.5,
+    radius: 1.15, // soft, generously rounded — airy resort warmth
     fonts: { display: "playfair", body: "inter" },
   },
 
