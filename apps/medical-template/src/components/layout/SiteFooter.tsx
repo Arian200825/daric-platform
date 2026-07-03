@@ -9,12 +9,17 @@ export function SiteFooter() {
   const { l, t } = useI18n();
   const { brand, contact, hours, socials, sections } = config;
   const navItems = sections.filter((s) => s.enabled && s.inNav);
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
     <Footer
       brand={brand.name}
       socials={socials}
       builtBy={{ label: "Built by Daric", href: config.daric.url }}
+      legalLinks={[
+        { label: "Privacy", href: `${base}/privacy/` },
+        { label: "Terms", href: `${base}/terms/` },
+      ]}
     >
       {/* Brand */}
       <div className="lg:col-span-2">

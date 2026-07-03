@@ -14,6 +14,7 @@ export function Footer({
   note,
   socials = [],
   builtBy,
+  legalLinks = [],
   children,
 }: {
   brand: string;
@@ -21,9 +22,11 @@ export function Footer({
   socials?: FooterSocial[];
   /** Credit backlink, e.g. { label: "Built by Daric", href: "https://…" }. */
   builtBy?: { label: string; href: string };
+  /** Privacy / Terms etc. — rendered in the bottom bar. */
+  legalLinks?: { label: string; href: string }[];
   children?: ReactNode;
 }) {
-  const year = "2025";
+  const year = "2026";
   return (
     <footer className="border-t border-border bg-surface">
       {children && (
@@ -49,7 +52,16 @@ export function Footer({
               </>
             )}
           </p>
-          <div className="flex gap-4 uppercase tracking-[0.15em]">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 uppercase tracking-[0.15em]">
+            {legalLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="transition-colors hover:text-primary"
+              >
+                {link.label}
+              </a>
+            ))}
             {socials.map((s) => (
               <a
                 key={s.label}

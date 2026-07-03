@@ -30,3 +30,12 @@ export { CTABanner } from "./components/CTA";
 export { Accordion, type AccordionItem } from "./components/Accordion";
 export { Navbar, type NavItem } from "./components/Navbar";
 export { Footer, type FooterSocial } from "./components/Footer";
+export { LegalDocument } from "./components/LegalDocument";
+
+// Legal
+export {
+  buildLegalDocs,
+  type LegalDoc,
+  type LegalSection,
+  type LegalInput,
+} from "./lib/legal";
